@@ -45,11 +45,11 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> 
             holder.title.setText(currentItem.getTitle());
             holder.address.setText(currentItem.getAddress());
             holder.price.setText("$" + formater.format(currentItem.getPrice()));
-
-            int drawableResourceId = holder.itemView.getResources().getIdentifier(currentItem.getPic(), "drawable", holder.itemView.getContext().getPackageName());
-            Glide.with(holder.itemView.getContext())
-                    .load(drawableResourceId)
-                    .into(holder.pic);
+            holder.pic.setImageResource(items.get(position).getPic());
+//            int drawableResourceId = holder.itemView.getResources().getIdentifier(currentItem.getPic(), "drawable", holder.itemView.getContext().getPackageName());
+//            Glide.with(holder.itemView.getContext())
+//                    .load(drawableResourceId)
+//                    .into(holder.pic);
 
             holder.itemView.setOnClickListener(v -> {
                 Intent intent = new Intent(context, DetailsActivity.class);

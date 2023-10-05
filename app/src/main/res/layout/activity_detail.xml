@@ -21,7 +21,7 @@
 
                 <ImageView
                     android:id="@+id/pic"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/pic_detail"
                     app:layout_constraintBottom_toBottomOf="parent"

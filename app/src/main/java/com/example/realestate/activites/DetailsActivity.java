@@ -14,12 +14,14 @@ import com.example.realestate.Adapter.itemsAdapter;
 import com.example.realestate.Models.itemModels;
 import com.example.realestate.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class DetailsActivity extends AppCompatActivity {
     private TextView txtTitle,txtDescription,txtPrice,txtBed,txtBath,txtWifi;
     private itemModels items;
     private ImageView pic;
+    DecimalFormat formater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,27 +34,25 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void setVeriables() {
-        try {
-            items = (itemModels) getIntent().getSerializableExtra("object");
-        }catch (Exception e){
-            Toast.makeText(this,"Error on load object",Toast.LENGTH_LONG).show();
-
-        }
+        items = (itemModels) getIntent().getSerializableExtra("object");
         txtTitle.setText(items.getTitle());
-        txtPrice.setText(items.getPrice());
-        txtBed.setText(items.getBad() + "Bed");
-        txtBath.setText(items.getBad() + "Bath");
+        txtPrice.setText("$" + formater.format(items.getPrice())); // Convert to String
+        txtBed.setText(items.getBad() + " Bed");
+        txtBath.setText(items.getBad() + " Bath");
         txtDescription.setText(items.getDescription());
-        if (items.isWifi())
+        if (items.isWifi()) {
             txtWifi.setText("Wifi");
-        else
+        } else {
             txtWifi.setText("No-Wifi");
+        }
 
-        int picID = getResources().getIdentifier(items.getPic(), "drawable", getPackageName());
-        Glide.with(this).load(picID).into(pic);
+        int picResourceID = items.getPic(); // Get the resource ID directly
+        pic.setImageResource(picResourceID);
     }
 
+
     private void initView() {
+    formater = new DecimalFormat("###,###,###,###.##");
     txtBath = (TextView) findViewById(R.id.txtBath);
     txtBed = (TextView) findViewById(R.id.txtBed);
     txtDescription = (TextView) findViewById(R.id.txtDescription);
