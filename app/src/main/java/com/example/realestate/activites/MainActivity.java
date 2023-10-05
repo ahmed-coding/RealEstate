@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.realestate.Adapter.itemsAdapter;
 import com.example.realestate.Models.itemModels;
@@ -12,13 +16,15 @@ import com.example.realestate.R;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView.Adapter adapterPopular,adapterNew;
+    private ImageView imageView;
     private RecyclerView recyclerViewPopular, recyclerViewNew;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         initRecyclerView();
     }
@@ -58,6 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerViewNew.setAdapter(adapterNew);
         recyclerViewPopular.setAdapter(adapterPopular);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        int viewID = view.getId();
+        if (viewID == R.id.btnAcc)
+            Toast.makeText(this,"Accordion", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this,"Not Available at this Time", Toast.LENGTH_SHORT).show();
 
     }
 }
