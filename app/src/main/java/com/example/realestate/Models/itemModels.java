@@ -12,7 +12,7 @@ public class itemModels implements Serializable {
     private int price;
 
 
-    private int pic;
+    private String pic;
     private boolean wifi;
 
     public String getTitle() {
@@ -63,11 +63,11 @@ public class itemModels implements Serializable {
         this.price = price;
     }
 
-    public int getPic() {
+    public String getPic() {
         return pic;
     }
 
-    public void setPic(int pic) {
+    public void setPic(String pic) {
         this.pic = pic;
     }
 
@@ -79,7 +79,7 @@ public class itemModels implements Serializable {
         this.wifi = wifi;
     }
 
-    public itemModels(String title, String address, String description, int bad, int bath, int price, int pic, boolean wifi) {
+    public itemModels(String title, String address, String description, int bad, int bath, int price, String pic, boolean wifi) {
         this.title = title;
         this.address = address;
         this.description = description;
