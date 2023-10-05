@@ -1,5 +1,7 @@
 package com.example.realestate.Models;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 public class itemModels implements Serializable {
@@ -68,7 +70,9 @@ public class itemModels implements Serializable {
     }
 
     public void setPic(String pic) {
+        Log.d("Debug", "Setting pic to: " + pic);
         this.pic = pic;
+        Log.d("Debug", "pic is now: " + this.pic);
     }
 
     public boolean isWifi() {

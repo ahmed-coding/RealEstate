@@ -40,21 +40,23 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(items.get(position).getTitle());
-        holder.address.setText(items.get(position).getAddress());
-        holder.price.setText("$"+formater.format(items.get(position).getPrice()));
-        int drawableResourceId = holder.itemView.getResources().getIdentifier(items.get(position).getPic(), "drawable",holder.itemView.getContext().getPackageName());
-        Glide.with(holder.itemView.getContext())
-                .load(drawableResourceId)
-                .into(holder.pic);
-        holder.itemView.setOnClickListener(v-> {
+        itemModels currentItem = items.get(position);
+        if (currentItem != null) {
+            holder.title.setText(currentItem.getTitle());
+            holder.address.setText(currentItem.getAddress());
+            holder.price.setText("$" + formater.format(currentItem.getPrice()));
 
+            int drawableResourceId = holder.itemView.getResources().getIdentifier(currentItem.getPic(), "drawable", holder.itemView.getContext().getPackageName());
+            Glide.with(holder.itemView.getContext())
+                    .load(drawableResourceId)
+                    .into(holder.pic);
+
+            holder.itemView.setOnClickListener(v -> {
                 Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("object", items.get(position));
+                intent.putExtra("object", currentItem);
                 context.startActivity(intent);
-        });
-
-
+            });
+        }
     }
 
     @Override
