@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FE6900</color>
     <color name="textColor">#000000</color>
+    <color name="yellow">#E1A500"</color>
+    <color name="bgBlack">#343434</color>
 </resources>
