@@ -78,9 +78,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        Intent intent = new Intent(this,aboutActivity.class);
+
         int viewID = view.getId();
         if (viewID == R.id.btnAcc)
-            Toast.makeText(this,"Accordion", Toast.LENGTH_SHORT).show();
+        startActivity(intent);
         else
             Toast.makeText(this,"Not Available at this Time", Toast.LENGTH_SHORT).show();
 
