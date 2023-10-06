@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgBlack">
+    android:background="@color/bgblack">
 
     <ImageView
         android:id="@+id/imageView18"
@@ -56,13 +56,13 @@
                 android:id="@+id/edit_text_password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Email"
+                android:hint="Password"
                 android:textColorHint="@color/white"
                 android:padding="8dp"
                 android:drawablePadding="16dp"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:drawableStart="@drawable/email"
+                android:drawableStart="@drawable/password"
 
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="32dp"
@@ -70,9 +70,9 @@
                 android:background="@drawable/edittext_background_1"/>
 
             <ImageView
-                android:id="@+id/imageView19"
+                android:id="@+id/button_login"
                 android:layout_width="wrap_content"
-                android:layout_gravity="end"
+                android:layout_gravity="start"
                 android:layout_marginTop="16sp"
 
                 android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 android:text="تسجيل الدخول عبر قوقل"
                 android:textColor="@color/white"
                 android:background="@drawable/background_btn_2"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button5"
@@ -117,7 +117,7 @@
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="هل انت جديد؟ تسجيل حساب."
+                android:text="هل انت جديد؟ إنشاء حساب."
                 android:textColor="@color/yellow"
                 android:textSize="16sp"
                 android:textStyle="bold"
